@@ -51,16 +51,17 @@ public class Arbol {
     
     public void insertNodo (String nombre, String padre){
         if (getRaiz()== null){
-            System.out.println("Insertando nodo raiz");
+            System.out.println("Insertando nodo raiz" + "  --->  " + nombre);
             this.raiz = new Nodo(nombre);
         }else{ 
             Nodo nodoPadre = BusquedaRecursiva(padre); 
-            System.out.println("Nodo Padre " + nodoPadre.getNombre());
+//            System.out.println("Nodo Padre " + nodoPadre.getNombre());
             if (nodoPadre != null){
                 nodoPadre.addHijo(new Nodo(nombre));
             } else {
                 raiz.getHijos().add(new Nodo(nombre));
             }
+            System.out.println("Nodo insertado: " + nombre + "  ---> " + " Nodo Padre " + nodoPadre.getNombre());
         }
     }
     
